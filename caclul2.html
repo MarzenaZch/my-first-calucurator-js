@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<style type="text/css">
+
+
+		
+	#cyfr{
+			border-radius: 10px 70%;
+			padding: 8px;
+			
+		color: black;
+	font-size: 20px;
+    width: 50px;
+    height: 40px;
+    margin: 3px;
+    background-color: #616161;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+
+		}
+	#equal{
+	border-radius: 10px 70%;
+	padding: 5px;
+	color: black;
+	font-size: 20px;
+    width: 50px;
+    height: 40px;
+    margin: 3px;
+    background-color: #616161;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+
+
+	}
+	
+	#display
+	{
+		width: 210px;
+		height: 20px;
+		padding: 10px;
+		border-radius: 10%;
+		padding-top: : 5px;
+	}
+	#kalk
+	{
+		width: 240px;
+		height: 260px;
+		background: orange;
+		
+		padding: 10px;
+		border-radius: 10px;
+		margin: 10px;
+	}
+	</style>
+
+
+<form name="calcform">
+	<div id="kalk">
+		<input id="display" type="textbox" name="txt"><br>
+	<input type="button" id="cyfr" value="9" onclick="add('9')">
+	<input type="button" id="cyfr" value="8" onclick="add('8')">
+	<input type="button" id="cyfr" value="7" onclick="add('7')">
+	<input type="button" id="cyfr" value="+" onclick="add('+')"><br>
+	<input type="button" id="cyfr" value="6" onclick="add('6')">
+	<input type="button" id="cyfr" value="5" onclick="add('5')">
+	<input type="button" id="cyfr" value="4" onclick="add('4')">
+	<input type="button" id="cyfr" value="-" onclick="add('-')">
+	<br>
+	<input type="button" id="cyfr" value="3" onclick="add('3')">
+	<input type="button" id="cyfr" value="2" onclick="add('2')">
+	<input type="button" id="cyfr" value="1" onclick="add('1')">
+	<input type="button" id="cyfr" value="0" onclick="add('0')"><br>
+	<input type="button" id="cyfr" value="/" onclick="add('/')">
+	<input type="button" id="cyfr" value="*" onclick="add('*')">
+	<input type="button" id="equal" value="=" onclick="answer('=')">
+	<input type="button" id="cyfr" value="CE" onclick="add('CE')">
+	</div>
+
+	<script type="text/javascript">
+		
+		var box=document.getElementById("display");
+
+		function add(x)
+		{
+			//"+=" pozwala na dodanie nastepnej wartosci bez usuwania wczesniejszej
+			box.value +=x;
+			//aby wyczyscic pole wystarczy przypisac pusta wartosc
+			if (x=="CE") 
+			{
+				box.value=" ";
+			}
+		}
+
+		function answer()
+		{
+			//eval jest na tyle rozumne, ze wszystko za nas liczy
+			x=box.value;
+			x=eval(x);
+			box.value= x;
+		}
+		//u mnie to dziala, nie umiem tego inaczej zrobic
+
+
+
+	</script>
+
+
+</body>
+</html>
